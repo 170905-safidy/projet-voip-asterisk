@@ -1,0 +1,16 @@
+# Identifiants réels — ne jamais publier
+.env
+*.env
+config/*.local.conf
+
+# Logs
+*.log
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Sauvegardes/éditeurs
+*~
+*.swp
+*.bak
