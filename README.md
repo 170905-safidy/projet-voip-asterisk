@@ -2,13 +2,13 @@
 
 Système téléphonique complet construit avec **Asterisk**, incluant un serveur vocal interactif (IVR), un routage multi-services avec repli automatique d'agents, une conférence téléphonique, un journal d'appels (CDR) et un système de facturation prépayé/postpayé avec contrôle de crédit en temps réel — le tout sur **PostgreSQL**.
 
-## 📄 Documentation complète
+## Documentation complète
 
 👉 [**Documentation technique complète (PDF, 65 pages)**](docs/Documentation_Technique_Projet_VOIP.pdf)
 
 Elle couvre : méthodologie de réalisation, installation pas à pas, toutes les commandes exécutées, configuration commentée ligne par ligne, chronologie complète, historique de tous les bugs rencontrés (cause, diagnostic, solution), et bonnes pratiques.
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Softphone (SIP) → Asterisk → IVR (Google TTS) → Dialplan → Service / Queue
@@ -22,7 +22,7 @@ Softphone (SIP) → Asterisk → IVR (Google TTS) → Dialplan → Service / Que
 
 Schéma détaillé : [`docs/Architecture_Reseau.png`](docs/Architecture_Reseau.png)
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 - IVR vocal généré dynamiquement (Google TTS)
 - Routage vers 3 services (commercial, support, comptabilité)
@@ -35,7 +35,7 @@ Schéma détaillé : [`docs/Architecture_Reseau.png`](docs/Architecture_Reseau.p
 - Codes de recharge : génération, composition téléphonique directe (`#XXX#`), suppression automatique après usage
 - Console web de supervision (comptes + CDR en quasi temps réel), en HTTPS
 
-## 📁 Structure du dépôt
+## Structure du dépôt
 
 ```
 ├── docs/       → documentation technique (PDF) + schéma d'architecture
@@ -45,7 +45,7 @@ Schéma détaillé : [`docs/Architecture_Reseau.png`](docs/Architecture_Reseau.p
 └── web/        → console de supervision (PHP)
 ```
 
-## ⚙️ Installation rapide
+## Installation rapide
 
 1. Suivre `scripts/install_asterisk.sh` sur une VM Ubuntu Server 24.04 LTS
 2. Copier les fichiers de `config/` dans `/etc/asterisk/` et les inclure via `#include` (voir doc, section 3)
@@ -53,10 +53,10 @@ Schéma détaillé : [`docs/Architecture_Reseau.png`](docs/Architecture_Reseau.p
 4. Copier `config/.env.example` en `.env`, remplir les vrais identifiants, adapter les scripts de `scripts/` et `web/index.php` en conséquence
 5. Voir la documentation complète pour le détail de chaque étape
 
-## 🔒 Sécurité
+## Sécurité
 
 Tous les mots de passe présents dans ce dépôt sont des **placeholders** (`CHANGE_ME_...`) — ne jamais les utiliser tels quels. Voir `config/.env.example` pour la liste des identifiants à définir.
 
-## 🎓 Contexte
+## Contexte
 
 Projet académique (VoIP/IPBX), réalisé étape par étape avec documentation méthodique de chaque bug rencontré et de sa résolution.
